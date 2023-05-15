@@ -40,7 +40,6 @@ N/A
 - [Node.js](https://nodejs.org/en/)
 - [Nodemon](https://www.npmjs.com/package/nodemon)
 - [React](https://www.npmjs.com/package/react)
-- [react-bootstrap](https://react-bootstrap.github.io/)
 - [Apollo-server-express](https://www.npmjs.com/package/apollo-server-express)
 - [bcrypt](https://www.npmjs.com/package/bcrypt)
 - [graphql](https://www.npmjs.com/package/graphql)
