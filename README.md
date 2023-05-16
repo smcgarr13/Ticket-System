@@ -2,6 +2,7 @@
 Write something cool...
 
 [![OpenFaaS](https://img.shields.io/badge/License-MIT-blue.svg)](https://www.openfaas.com)
+[![style: styled-components](https://img.shields.io/badge/style-%F0%9F%92%85%20styled--components-orange.svg?colorB=daa357&colorA=db748e)](https://github.com/styled-components/styled-components)
 
 # Table of Contents
 
@@ -42,8 +43,11 @@ N/A
 - [React](https://www.npmjs.com/package/react)
 - [Apollo-server-express](https://www.npmjs.com/package/apollo-server-express)
 - [bcrypt](https://www.npmjs.com/package/bcrypt)
+- [JWT](https://www.npmjs.com/package/jsonwebtoken)
 - [graphql](https://www.npmjs.com/package/graphql)
+- [MongoDB](https://www.npmjs.com/package/mongodb)
 - [mongoose](https://www.npmjs.com/package/graphql)
+- [styled-components](https://www.npmjs.com/package/styled-components)
 
 ## License
 MIT
