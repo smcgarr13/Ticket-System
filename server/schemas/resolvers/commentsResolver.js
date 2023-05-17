@@ -15,7 +15,8 @@ const resolvers = {
     // Resolver for multiple comments. It doesn't receive any arguments and fetches all comments from the database.
     comments: async (parent, args, context) => {
       // Use the find method from Mongoose to find all comments
-      return await Comment.find({});
+    //   return await Comment.find({});
+    return await Comment.findById(questionId);
     },
   },
   // Mutation resolvers
