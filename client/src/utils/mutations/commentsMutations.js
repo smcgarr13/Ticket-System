@@ -1,11 +1,9 @@
-// clientMutation.js
-
 import { gql } from '@apollo/client';
 
 // ADD_COMMENT mutation
 export const ADD_COMMENT = gql`
-  mutation AddComment($questionId: ID!, $commentAuthor: String!, $commentText: String!, $isSolution: Boolean!) {
-    addComment(questionId: $questionId, commentAuthor: $commentAuthor, commentText: $commentText, isSolution: $isSolution) {
+  mutation AddComment($questionId: ID!, $commentAuthor: String!, $commentText: String!) {
+    addComment(questionId: $questionId, commentAuthor: $commentAuthor, commentText: $commentText) {
       _id
       questionId
       commentAuthor
@@ -27,8 +25,8 @@ export const REMOVE_COMMENT = gql`
 
 // UPDATE_COMMENT mutation
 export const UPDATE_COMMENT = gql`
-  mutation UpdateComment($_id: ID!, $questionId: ID, $commentAuthor: String, $commentText: String, $isSolution: Boolean) {
-    updateComment(_id: $_id, questionId: $questionId, commentAuthor: $commentAuthor, commentText: $commentText, isSolution: $isSolution) {
+  mutation UpdateComment($id: ID!, $commentAuthor: String, $commentText: String, $isSolution: Boolean) {
+    updateComment(id: $id, commentAuthor: $commentAuthor, commentText: $commentText, isSolution: $isSolution) {
       _id
       questionId
       commentAuthor
