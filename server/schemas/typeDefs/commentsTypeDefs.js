@@ -4,6 +4,7 @@ const typeDefs = gql`
   # Comment type definition
   type Comment {
     _id: ID
+    questionId: ID!
     commentAuthor: String
     commentText: String
     createdAt: String
@@ -13,6 +14,7 @@ const typeDefs = gql`
   # Query type definition
   type Query {
     comment(commentId: ID!): Comment
+    comments(questionId: ID!): [Comment]
   }
 
   # Mutation type definition
