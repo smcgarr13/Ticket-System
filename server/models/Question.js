@@ -40,6 +40,8 @@ const QuestionSchema = new mongoose.Schema({
     type: Boolean,
     default: false,
   },
+  // Filter field that can be used to categorize or filter questions 
+  // Default is an empty string, meaning no filter has been applied
   filter: {
     type: String,
     default: ''
