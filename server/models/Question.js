@@ -40,6 +40,11 @@ const QuestionSchema = new mongoose.Schema({
     type: Boolean,
     default: false,
   },
+  filter: {
+    type: String,
+    default: ''
+  }
+
 });
 
 module.exports = mongoose.model('Question', QuestionSchema);
