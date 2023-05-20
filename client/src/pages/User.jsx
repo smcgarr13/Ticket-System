@@ -1,7 +1,7 @@
 import React from 'react';
 // import Header from '../components/Header';
 // import Footer from '../components/Footer';
-import UserForm from '../components/UserForm';
+import UserForm from '../components/userForm';
 import '../index.css';
 
 function User() { 
