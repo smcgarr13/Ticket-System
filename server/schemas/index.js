@@ -1,5 +1,5 @@
 // Import the ApolloServer from apollo-server
-const { ApolloServer } = require('apollo-server');
+const { ApolloServer } = require("apollo-server-express");
 
 // Import the type definitions and resolvers
 const typeDefs = require('./typeDefs');
