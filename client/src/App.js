@@ -2,9 +2,9 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import Login from './pages/Login';
+import Login from './pages/login';
 import User from './pages/User';
-import Home from './pages/Home';
+import Home from './pages/home';
 import styled from 'styled-components';
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 
