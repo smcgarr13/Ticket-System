@@ -1,6 +1,6 @@
 import React from 'react';
-import Header from '../src/components/Header/Header';
-import Footer from './components/Footer/Footer';
+import Header from './components/Header';
+import Footer from './components/Footer';
 import styled from 'styled-components';
 
 const H1 = styled.h1`
