@@ -1,5 +1,5 @@
 // Importing necessary modules
-const { User } = require('../models');
+const { User } = require("../../models");
 
 // Resolver for handling user related queries and mutations
 const userResolvers = {
@@ -51,4 +51,4 @@ const userResolvers = {
   },
 };
 
-module.exports = questionResolvers;
+module.exports = userResolvers;
