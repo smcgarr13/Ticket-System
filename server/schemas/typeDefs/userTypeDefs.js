@@ -7,7 +7,7 @@ const typeDefs = gql`
     email: String
     password: String
     Questions: [Question]
-    Bounties: [Bounty];
+    Bounties: [Bounty]
   }
 
   type Auth {
