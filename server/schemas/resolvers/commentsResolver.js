@@ -1,7 +1,7 @@
 // Import the AuthenticationError class from Apollo Server Express library
 const { AuthenticationError } = require('apollo-server-express');
 // Import the Comment model from the models directory
-const { Comment } = require('../models');
+const { Comment } = require('../../models');
 
 // Define the resolvers
 const resolvers = {
