@@ -1,8 +1,7 @@
 import React from 'react';
-import Header from '../Header/Header';
-import Footer from '../Footer/Footer.jsx';
-import '../../../src/index.css';
-import '../assets/randys-booth-logo.png'
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import '../index.css';
 
 function Home({ children }) { 
   return (
