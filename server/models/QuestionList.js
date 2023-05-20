@@ -16,5 +16,5 @@ const QuestionListSchema = new mongoose.Schema({
 
 });
 
-module.exports = mongoose.model('QuestionList', QuestionSchema);
+module.exports = mongoose.model('QuestionList', QuestionListSchema);
 
