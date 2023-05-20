@@ -1,5 +1,5 @@
 // Importing necessary modules
-const { Question } = require('../models');
+const { Question } = require('../../models');
 
 // Resolver for handling question related queries and mutations
 const questionResolvers = {
