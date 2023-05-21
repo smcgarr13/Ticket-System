@@ -16,7 +16,7 @@ const resolvers = {
     comments: async (parent, args, context) => {
       // Use the find method from Mongoose to find all comments
     //   return await Comment.find({});
-    return await Comment.findById(questionId);
+    return await Comment.findById({questionId});
     },
   },
   // Mutation resolvers

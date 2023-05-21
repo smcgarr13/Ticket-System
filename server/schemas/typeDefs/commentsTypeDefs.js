@@ -4,7 +4,7 @@ const typeDefs = gql`
   # Comment type definition
   type Comment {
     _id: ID
-    questionId: ID!
+    questionId: ID
     commentAuthor: String
     commentText: String
     createdAt: String
