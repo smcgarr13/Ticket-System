@@ -64,6 +64,7 @@ function Header() {
           {/* <li><a href="/questionForm">QUESTION</a></li>
           <li><a href="/commentForm">COMMENT</a></li> */}
           <li><a href="/user">USER</a></li>
+          <li><a href="/checkout">CHECKOUT</a></li>
           <li><a href="/login">LOG IN</a></li>
         </ul>
       </nav>
