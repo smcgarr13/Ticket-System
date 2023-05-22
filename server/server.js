@@ -17,9 +17,13 @@ const server = new ApolloServer({
    context: authMiddleware,
 });
 
+
 // Middleware for parsing HTTP request bodies
-app.use(express.urlencoded({extended:false}));
 app.use(express.json());
+app.use(express.urlencoded({extended:false}));
+
+
+
 
 // Serving static files in production
 if(process.env.NODE_ENV ==='production'){

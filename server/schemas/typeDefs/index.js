@@ -6,7 +6,10 @@ const userTypeDefs = require('./userTypeDefs');
 const commentsTypeDefs = require('./commentsTypeDefs');
 const questionTypeDefs = require('./questionTypeDefs');
 const questionListTypeDefs = require('./questionListTypeDefs');
+
 const bountyTypeDefs = require('./bountyTypeDefs');
+
+const stripeTypeDefs = require('./stripeTypeDefs');
 
 // Merging all typeDefs into one array
 const typeDefs = gql`
@@ -15,6 +18,8 @@ const typeDefs = gql`
   ${questionTypeDefs}
   ${questionListTypeDefs}
   ${bountyTypeDefs}
+  ${stripeTypeDefs}
+
 `;
 
 // Exporting the merged typeDefs

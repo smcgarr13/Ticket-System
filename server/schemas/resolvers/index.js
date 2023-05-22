@@ -3,6 +3,7 @@ const userResolver = require('./userResolver');
 const commentsResolver = require('./commentsResolver');
 const questionResolver = require('./questionResolver');
 const questionListResolver = require('./questionListResolver');
+const stripeResolver = require('./stripeResolver');
 
 // Merging all resolver objects
 const resolvers = {
@@ -10,6 +11,7 @@ const resolvers = {
   ...commentsResolver,
   ...questionResolver,
   ...questionListResolver,
+  ...stripeResolver,
 };
 
 // Exporting the merged resolvers
