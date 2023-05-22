@@ -5,8 +5,8 @@ const { ApolloServer } = require("apollo-server-express");
 const typeDefs = require('./typeDefs');
 const resolvers = require('./resolvers');
 
-// Create the Apollo Server
-const server = new ApolloServer({ typeDefs, resolvers });
+// // Create the Apollo Server
+// const server = new ApolloServer({ typeDefs, resolvers });
 
 // Export the server
-module.exports = server;
+module.exports = {typeDefs, resolvers};

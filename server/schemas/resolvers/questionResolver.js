@@ -42,9 +42,9 @@ const questionResolvers = {
       return await Question.findByIdAndUpdate(id, update, { new: true });
     },
     // Resolver for deleting a question
-    deleteQuestion: async (parent, { id }, context) => {
-      return await Question.findByIdAndDelete(id);
-    },
+    // deleteQuestion: async (parent, { id }, context) => {
+    //   return await Question.findByIdAndDelete(id);
+    // },
   },
 };
 
