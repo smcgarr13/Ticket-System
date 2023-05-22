@@ -1,8 +1,0 @@
-const { gql } = require('apollo-server-express');
-const typeDefs = gql`
-  type Checkout {
-    questionId: ID
-  }`
-
-
-  module.exports = typeDefs;
