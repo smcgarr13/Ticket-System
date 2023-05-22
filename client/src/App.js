@@ -21,7 +21,6 @@ const client = new ApolloClient({
 
 // Set up Stripe
 const stripePromise = loadStripe
-// TODO: update with public key
 ('pk_test_TYooMQauvdEDq54NiTphI7jx');
 
 // const stripePromise = loadStripe
@@ -66,7 +65,7 @@ function App() {
                 <Route path="/checkout" element={<Checkout />} />
                 {/* <Route path="/checkout" element={<Elements><Checkout /></Elements>} /> */}
                 {/* <Route path="/checkoutForm" element={<Elements><CheckoutForm /></Elements>} /> */}
-                <Route path="/" element={<Home />} />
+                <Route path="/Home" element={<Home />} />
               </Routes>
             </Content>
             <Footer />

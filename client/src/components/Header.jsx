@@ -58,7 +58,7 @@ function Header() {
 
         <ul>
           {/* <li><a href="https://randysboothco.com/">HOME</a></li> */}
-          <li><a href="/home">HOME</a></li>
+          <li><a href="/Home">HOME</a></li>
           {/* <li><a href="/projects">PROJECTS</a></li>
           <li><a href="/inventory-landing">INVENTORY</a></li> */}
           {/* <li><a href="/questionForm">QUESTION</a></li>

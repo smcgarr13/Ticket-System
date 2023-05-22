@@ -115,7 +115,7 @@ display: flex;
 height: 100vh;
 }
 
-.container-login {
+/* .container-login {
   background-color: #DF6301;
   color: floralwhite;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -125,7 +125,20 @@ height: 100vh;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
+} */
+
+.container-login {
+  background-color: #DF6301;
+  color: floralwhite;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 600px;
+  height: 350px;
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  }
 
 h3 {
   font-size: 15px;
@@ -136,18 +149,6 @@ h3 {
 .container-login h3 {
   margin-top: 20px;
   margin-bottom: 10px;
-}
-
-.container-login {
-background-color: #DF6301;
-color: floralwhite;
-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-height: 350px;
-width: 600px; 
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
 }
 
 .center-content {
@@ -198,6 +199,96 @@ button {
 
 #sign-up-button {
   margin: 20px 0px 60px 0px;
+}
+
+
+--------------------------------------------------------------
+
+/* .home-page-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+} */
+
+--------------------------------------------------------------
+
+/* question prompt */
+
+.question-page-container {
+  display: flex;
+  height: 100vh;
+  }  
+
+.container-question {
+  background-color: #DF6301;
+  color: floralwhite;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 600px;
+  height: 350px;
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h3 {
+  font-size: 15px;
+  padding-top: 60px;
+  text-align: center;
+}
+
+.container-question h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.login-form, .signup-form, .question-form {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+margin-bottom: 20px;
+}
+
+/* button {
+  background-color: #DF6301;
+  border: 1px solid floralwhite;
+  border-radius: 20px;
+  color:floralwhite;
+  width: 200px;
+  padding: 6px;
+  margin: 20px 0px 40px 0px;
+  align-items: center;
+}
+
+#sign-up-button {
+  margin: 20px 0px 60px 0px;
+} */
+
+--------------------------------------------------------------
+/* view all questions */
+
+.sidebar {
+  display: flex;
+  /* flex-direction: column;
+  align-items: center; */
+  padding: 20px;
+
+  background-color: #ccc;
+  color: floralwhite;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 600px;
+  height: 350px;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  flex-grow: 1;
 }
 
 --------------------------------------------------------------
