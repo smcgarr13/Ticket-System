@@ -15,18 +15,30 @@ const questionResolvers = {
   },
   Mutation: {
     // Resolver for adding a new question
-    addQuestion: async (parent, { userId, questionText, bounty }, context) => {
+    addQuestion: async (parent, { questionAuthor, questionText, bounty }, context) => {
       let newQuestion = new Question({
-        userId,
+        questionAuthor,
         questionText,
-        bounty,
+        // bounty,
         createdAt: new Date().toISOString(),
         solved: false,
       });
-
+    
       return await newQuestion.save();
     },
+    // addQuestion: async (parent, { userId, questionText, bounty }, context) => {
+    //   let newQuestion = new Question({
+    //     userId,
+    //     questionText,
+    //     bounty,
+    //     createdAt: new Date().toISOString(),
+    //     solved: false,
+    //   });
+
+    //   return await newQuestion.save();
+    // },
     // Resolver for updating a question
+
     updateQuestion: async (parent, { id, questionText, bounty, solved }, context) => {
       let update = {};
       if (questionText !== undefined) {
