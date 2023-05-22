@@ -6,6 +6,7 @@ import './../index.css';
 
 // Defining the UserForm component
 const UserForm = () => {
+  console.log('Rendering UserForm')
   // Using React useState hook for form state management
   const [formState, setFormState] = useState({
     username: '',
