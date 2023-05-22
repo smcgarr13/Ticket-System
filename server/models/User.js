@@ -28,7 +28,12 @@ const UserSchema = new mongoose.Schema({
     comments:[
         {
             type:String,
-            trime: true,
+            trim: true,
+        }
+    ],
+    bounties: [
+        {
+            type: String,
         }
     ]
 
