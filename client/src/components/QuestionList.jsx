@@ -71,6 +71,9 @@ export default QuestionsList;
 
 
 
+ feature/QuestionList-052123
+
+ main
 // import React from 'react';
 // import { Link } from 'react-router-dom';
 // import { useQuery } from '@apollo/client';
@@ -197,6 +200,9 @@ export default QuestionsList;
 //   );
 // };
 
+feature/QuestionList-052123
+// export default QuestionsList;
+
 // export default QuestionsList;
 
 
@@ -283,3 +289,4 @@ export default QuestionsList;
 // };
 
 // export default QuestionsList;
+main
