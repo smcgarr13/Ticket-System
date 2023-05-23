@@ -1,17 +1,31 @@
 import { gql } from '@apollo/client';
 
 // ADD_QUESTION mutation
+
 export const ADD_QUESTION = gql`
-  mutation AddQuestion($userId: ID!, $question: String!, $bounty: Int) {
-    addQuestion(userId: $userId, question: $question, bounty: $bounty) {
+  mutation AddQuestion($questionText: String!, $questionAuthor: String!) {
+    addQuestion(questionText: $questionText, questionAuthor: $questionAuthor) {
       _id
-      user
-      question
-      bounty
+      questionAuthor
+      questionText
+      createdAt
       solved
+      bounty
     }
   }
 `;
+
+// export const ADD_QUESTION = gql`
+//   mutation AddQuestion($userId: ID!, $question: String!, $bounty: Int) {
+//     addQuestion(userId: $userId, question: $question, bounty: $bounty) {
+//       _id
+//       user
+//       question
+//       bounty
+//       solved
+//     }
+//   }
+// `;
 
 // UPDATE_QUESTION mutation
 export const UPDATE_QUESTION = gql`

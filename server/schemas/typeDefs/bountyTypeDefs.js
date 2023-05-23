@@ -1,7 +1,7 @@
 const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
-type Bounty {
+type bounty {
     _id: ID
     amount: String
   }`

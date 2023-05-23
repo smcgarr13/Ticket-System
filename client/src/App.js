@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import Login from './pages/Login';
 import User from './pages/User';
 import Home from './pages/Home';
+import ViewAllQuestions from './pages/ViewAllQuestions';
 import Checkout from './pages/Checkout';
 // import CheckoutForm from './pages/CheckoutForm';
 import styled from 'styled-components';
@@ -63,9 +64,12 @@ function App() {
                 <Route path="/login" element={<Login />} />
                 <Route path="/user" element={<User />} />
                 <Route path="/checkout" element={<Checkout />} />
+                <Route exact path="/ViewAllQuestions" element={<ViewAllQuestions />} />
+                <Route path="/Home" element={<Home />} />
+
                 {/* <Route path="/checkout" element={<Elements><Checkout /></Elements>} /> */}
                 {/* <Route path="/checkoutForm" element={<Elements><CheckoutForm /></Elements>} /> */}
-                <Route path="/Home" element={<Home />} />
+            
               </Routes>
             </Content>
             <Footer />

@@ -34,7 +34,7 @@ function Home() {
   const navigate = useNavigate();
 
   const viewAllQuestions = () => {
-    navigate("/questionList");
+    navigate("/ViewAllQuestions");
   };
 
   return (

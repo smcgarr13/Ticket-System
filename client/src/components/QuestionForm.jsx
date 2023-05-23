@@ -10,7 +10,11 @@ const QuestionForm = () => {
     event.preventDefault();
     try {
       const { data } = await addQuestion({
-        variables: { ...formState }
+        variables: {
+          questionAuthor: formState.questionAuthor,
+          questionText: formState.questionText,
+          bounty: formState.bounty,
+        }
       });
 
       console.log(data);
@@ -54,7 +58,7 @@ const QuestionForm = () => {
               className="form-control"
               type="number"
               name="bounty"
-              placeholder="Bounty"
+              placeholder="bounty"
               value={formState.bounty}
               onChange={handleChange}
               required
@@ -70,6 +74,86 @@ const QuestionForm = () => {
   };
   
   export default QuestionForm;
+
+
+
+
+
+
+
+
+// import React, { useState } from 'react';
+// import { useMutation } from '@apollo/client';
+// import { ADD_QUESTION } from '../utils/mutations';
+
+// const QuestionForm = () => {
+//   const [formState, setFormState] = useState({ questionAuthor: '', questionText: '', bounty: 0 });
+//   const [addQuestion, { error }] = useMutation(ADD_QUESTION);
+
+//   const handleFormSubmit = async event => {
+//     event.preventDefault();
+//     try {
+//       const { data } = await addQuestion({
+//         variables: { ...formState }
+//       });
+
+//       console.log(data);
+//     } catch (err) {
+//       console.error(err);
+//     }
+//   };
+
+//   const handleChange = event => {
+//     const { name, value } = event.target;
+//     setFormState({
+//       ...formState,
+//       [name]: value
+//     });
+//   };
+  
+//     return (
+//       <div className="container-question">
+//         <h2>Submit a New Question</h2>
+//         <form className="question-form" onSubmit={handleFormSubmit}>
+//           <div className="input-container">
+//             <input
+//               className="form-control"
+//               type="text"
+//               name="questionAuthor"
+//               placeholder="Username"
+//               value={formState.questionAuthor}
+//               onChange={handleChange}
+//               required
+//             />
+//             <input
+//               className="form-control"
+//               type="text"
+//               name="questionText"
+//               placeholder="Question"
+//               value={formState.questionText}
+//               onChange={handleChange}
+//               required
+//             />
+//             {/* <input
+//               className="form-control"
+//               type="number"
+//               name="bounty"
+//               placeholder="bounty"
+//               value={formState.bounty}
+//               onChange={handleChange}
+//               required
+//             /> */}
+//           </div>
+//           <button className="submit" type="submit">
+//             Submit
+//           </button>
+//         </form>
+//         {error && <div>There was an error adding your question, please try again.</div>}
+//       </div>
+//     );
+//   };
+  
+//   export default QuestionForm;
   
 
 
@@ -149,7 +233,7 @@ const QuestionForm = () => {
 //           <input
 //             type="number"
 //             name="bounty"
-//             placeholder="Bounty"
+//             placeholder="bounty"
 //             value={formState.bounty}
 //             onChange={handleChange}
 //             required
@@ -228,7 +312,7 @@ const QuestionForm = () => {
 //             className="form-control"
 //             type="number"
 //             name="bounty"
-//             placeholder="Bounty"
+//             placeholder="bounty"
 //             value={formState.bounty}
 //             onChange={handleChange}
 //             required
@@ -300,7 +384,7 @@ const QuestionForm = () => {
 //         <input
 //           type="number"
 //           name="bounty"
-//           placeholder="Bounty"
+//           placeholder="bounty"
 //           value={formState.bounty}
 //           onChange={handleChange}
 //           required
