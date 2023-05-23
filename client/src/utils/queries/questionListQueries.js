@@ -10,7 +10,7 @@ export const GET_QUESTIONLIST = gql`
         questionAuthor
         questionText
         createdAt
-        Bounty
+        bounty
         solution
         comments {
           _id
