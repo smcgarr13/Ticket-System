@@ -1,13 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 // import styled from 'styled-components';
-import 'styled-components';
+// import 'styled-components';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
-const express = require('express');
-const app = require('./server.js')
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -16,6 +13,13 @@ root.render(
     <App />
   </React.StrictMode>
 );
+
+// Extra
+// import * as serviceWorker from './serviceWorker';
+// Learn more about service workers: https://bit.ly/CRA-PWA
+// serviceWorker.register();
+
+
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

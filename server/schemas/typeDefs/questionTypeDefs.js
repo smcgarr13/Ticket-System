@@ -1,4 +1,5 @@
 // Type Definitions
+const { gql } = require('apollo-server-express');
 const typeDefs = gql`
   type Question {
     _id: ID!
