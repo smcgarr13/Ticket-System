@@ -1,5 +1,5 @@
 # Ticket-System
-Write something cool...
+Revolutionize your workflow with Ticket-System, a comprehensive solution for tracking issues, tasks, and more.
 
 [![OpenFaaS](https://img.shields.io/badge/License-MIT-blue.svg)](https://www.openfaas.com)
 [![style: styled-components](https://img.shields.io/badge/style-%F0%9F%92%85%20styled--components-orange.svg?colorB=daa357&colorA=db748e)](https://github.com/styled-components/styled-components)
@@ -19,7 +19,7 @@ Write something cool...
 -[Questions](#questions)
 
 ## Description
-This application is a MERN Stack application...write more...
+Ticket-System is a MERN Stack application designed to manage a ticketing system effectively. With a robust backend built on Express and MongoDB and a frontend powered by React, it offers a comprehensive solution to manage and track issues, tasks, or events. With advanced features like user authentication, commenting, and issue resolution status, it streamlines the management of any project, big or small.
 
 ## Installation
 This application is available via Heroku, but if you'd like to download it to your local machine, you can follow these simple steps:
@@ -27,10 +27,11 @@ This application is available via Heroku, but if you'd like to download it to yo
 1. Clone this repository.
 2. Navigate into the repository directory on your local machine.
 3. Run `npm install` to install the necessary dependencies.
-4. Run `npm start` to start the application.
+4. Make sure MongoDB is running on your machine (mongod command).
+5. Run `npm start` to start the application.
 
 ## Usage
-TBD
+Use the Ticket-System application to manage and track issues, tasks, or events. As a user, you can post questions, comment on existing ones, and even mark an issue as resolved. With the search feature, find relevant issues faster than ever.
 
 ## Credits
 N/A
@@ -43,10 +44,10 @@ N/A
 - [React](https://www.npmjs.com/package/react)
 - [Apollo-server-express](https://www.npmjs.com/package/apollo-server-express)
 - [bcrypt](https://www.npmjs.com/package/bcrypt)
-- [JWT](https://www.npmjs.com/package/jsonwebtoken)
-- [graphql](https://www.npmjs.com/package/graphql)
+- [JSON Web Token (JWT)](https://www.npmjs.com/package/jsonwebtoken)
+- [GraphQL](https://www.npmjs.com/package/graphql)
 - [MongoDB](https://www.npmjs.com/package/mongodb)
-- [mongoose](https://www.npmjs.com/package/graphql)
+- [Mongoose](https://www.npmjs.com/package/graphql)
 - [styled-components](https://www.npmjs.com/package/styled-components)
 
 ## License
@@ -60,10 +61,12 @@ N/A
 
 ## Questions
 
-You can find us on GitHub at [smcgarr13](https://github.com/smcgarr13), Luis, Shaun
+You can find us on GitHub at [smcgarr13](https://github.com/smcgarr13), Luis, Shaun, Teni
 
 Please email me directly if you have any additional questions.
 
 Email: unicorn@magical.com
 
 ## Link to Deployed Application:
+
+## Reference Image: 
