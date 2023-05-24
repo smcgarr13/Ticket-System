@@ -24,7 +24,7 @@ const typeDefs = gql `
     createdAt: String
     bounty: Int
     solved: Boolean
-    comment: [Comment]
+    comments: [Comment]
     solution: [Comment]
   }
 
