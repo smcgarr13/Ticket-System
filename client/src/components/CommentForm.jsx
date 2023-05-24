@@ -1,7 +1,7 @@
 // Importing necessary packages and components
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
-import { ADD_COMMENT } from '../graphql/mutations';
+import { ADD_COMMENT } from '../utils/mutations/commentsMutations';
 
 // Defining the CommentForm component
 const CommentForm = ({ questionId }) => {
