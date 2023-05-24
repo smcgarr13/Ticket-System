@@ -8,22 +8,43 @@ import styled from 'styled-components';
 
 // Styled-components
 const CardHeader = styled.h4`
-  background-color: dark;
+  background-color: blue;
+  width:100px;
   color: light;
   padding: 2rem;
   margin: 0;
+`;
+const QuestionContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content:center;
+  padding: 2rem;
+`;
+const CardContainer = styled.div`
+width: 100%
+background-color: green;
+`;
+const CardHolder = styled.div`
+  align-items: center;
+  width: 100%;
+  max-width: 900px;
 `;
 
 const WhiteText = styled.span`
   color: white;
   font-size: 1rem;
+  aling-items: center
 `;
 
 const Button = styled(Link)`
-  display: block;
-  width: 100%;
-  background-color: light;
-  color: dark;
+display: block;
+width: 100%;
+background-color: light;
+color: dark;
+text-align: center;
+padding: 0.5rem 1rem;
+margin-top: 0.5rem;
 `;
 
 const QuestionList = () => {
@@ -40,11 +61,11 @@ if (!data || !data.questions || !data.questions.length===0) {
 }
 
   return (
-    <div>
+    <QuestionContainer>
       <h3 className="text-primary">Questions</h3>
-      <div className="flex-row justify-space-between my-4">
+      <CardHolder>
         {data.questions.map((question) => (
-          <div key={question._id} className="col-12 col-xl-6">
+          <CardContainer key={question._id} className="col-12 col-xl-6">
             <div className="card mb-3">
               <CardHeader>
                 {question.questionText} <br />
@@ -59,10 +80,10 @@ if (!data || !data.questions || !data.questions.length===0) {
                 View Comments
               </Button>
             </div>
-          </div>
+          </CardContainer>
         ))}
-      </div>
-    </div>
+      </CardHolder>
+    </QuestionContainer>
   );
 };
 

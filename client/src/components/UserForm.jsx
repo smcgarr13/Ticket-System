@@ -1,7 +1,7 @@
 // Import necessary packages and components
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
-import { CREATE_USER } from '../utils/mutations';
+import { CREATE_USER } from '../utils/mutations/userMutations';
 import './../index.css';
 
 // Defining the UserForm component
