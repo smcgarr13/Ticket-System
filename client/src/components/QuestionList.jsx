@@ -28,7 +28,6 @@ const Button = styled(Link)`
 
 const QuestionList = () => {
 // Fetching questions data using the GET_QUESTIONLIST query
-console.log(useQuery(GET_QUESTIONS));
 const { loading, error, data } = useQuery(GET_QUESTIONS);
 const questions = data?.questions ||[]
 console.log(questions);
@@ -36,13 +35,13 @@ if (loading) return <p>Loading...</p>;
 if (error) return <p>Error </p>;
 
 // Ensure data and data.questionList exist before trying to access data.questionList.questions
-if (!data || !data.questions || !data.questions.length) {
+if (!data || !data.questions || !data.questions.length===0) {
   return <h3>No Questions Yet</h3>;
 }
 
   return (
     <div>
-      <h3 className="text-primary"></h3>
+      <h3 className="text-primary">Questions</h3>
       <div className="flex-row justify-space-between my-4">
         {data.questions.map((question) => (
           <div key={question._id} className="col-12 col-xl-6">

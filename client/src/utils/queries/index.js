@@ -12,6 +12,7 @@ const queries = {
   ...questionListQueries,
   ...stripeQueries,
 };
+console.log(queries);
 
 // Exporting the merged queries
 module.exports = queries;
