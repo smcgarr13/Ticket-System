@@ -2,7 +2,7 @@
 const { Question } = require('../../models');
 
 // Resolver for handling question related queries and mutations
-const questionResolvers = {
+const questionResolver = {
   Query: {
     // Resolver for finding a question by ID
     question: async (parent, { id }, context) => {
@@ -15,28 +15,16 @@ const questionResolvers = {
   },
   Mutation: {
     // Resolver for adding a new question
-    addQuestion: async (parent, { questionAuthor, questionText, bounty }, context) => {
-      let newQuestion = new Question({
+    addQuestion: async (parent, { questionAuthor, questionText}, context) => {
+      const newQuestion = await Question.create({
         questionAuthor,
         questionText,
-        // bounty,
-        createdAt: new Date().toISOString(),
-        solved: false,
-      });
-    
-      return await newQuestion.save();
-    },
-    // addQuestion: async (parent, { userId, questionText, bounty }, context) => {
-    //   let newQuestion = new Question({
-    //     userId,
-    //     questionText,
-    //     bounty,
-    //     createdAt: new Date().toISOString(),
-    //     solved: false,
-    //   });
 
-    //   return await newQuestion.save();
-    // },
+      })
+      console.log(newQuestion);
+      return newQuestion
+      
+    },
     // Resolver for updating a question
 
     updateQuestion: async (parent, { id, questionText, bounty, solved }, context) => {
@@ -49,15 +37,25 @@ const questionResolvers = {
       }
       if (solved !== undefined) {
         update.solved = solved;
+        if(solved){
+          const question = await Question.findById(id);
+          const solutionComment = await Comment.findOne({question:id,isSolution:true});
+          if(solutionComment){
+            update.solution = solutionComment;
+            
+          }else{
+            update.solution = null;
+          }
+        }
       }
 
       return await Question.findByIdAndUpdate(id, update, { new: true });
     },
     // Resolver for deleting a question
-    // deleteQuestion: async (parent, { id }, context) => {
-    //   return await Question.findByIdAndDelete(id);
-    // },
+    deleteQuestion: async (parent, { id }, context) => {
+      return await Question.findByIdAndDelete(id);
+    },
   },
 };
 
-module.exports = questionResolvers;
+module.exports = questionResolver

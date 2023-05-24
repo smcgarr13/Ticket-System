@@ -1,5 +1,5 @@
 // Importing necessary modules
-const { User } = require("../../models");
+const { User } = require("../../models/User");
 
 // Resolver for handling user related queries and mutations
 const userResolvers = {
@@ -9,7 +9,7 @@ const userResolvers = {
       return await User.findById(id);
     },
     // Resolver for finding all users
-    users: async (parent, args, context) => {
+    users: async () => {
       return await User.find({});
     },
   },
@@ -21,8 +21,7 @@ const userResolvers = {
         email,
         password,
       });
-
-      return await newQuestion.save();
+      return newUser;   
     },
     // Login User
     login: async (parent, { email, password }) => {
