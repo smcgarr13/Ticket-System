@@ -23,14 +23,12 @@ export const GET_SINGLEQUESTION = gql`
 `;
 // Get all Questionns
 export const GET_QUESTIONS = gql`
-  query allQuestions {
+  query GetQuestions {
     questions {
       _id
       questionAuthor
       questionText
       createdAt
-      solution
-      solved
     }
   }
 `;

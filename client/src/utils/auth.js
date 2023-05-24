@@ -1,8 +1,8 @@
-import decode from 'jwt-decode';
+import jwt_decode from 'jwt-decode';
 
 class AuthService {
   getUser() {
-    return decode(this.getToken());
+    return jwt_decode(this.getToken());
   }
 
   loggedIn() {
@@ -11,7 +11,7 @@ class AuthService {
   }
 
   isTokenExpired(token) {
-    const decoded = decode(token);
+    const decoded = jwt_decode(token);
     if (decoded.exp < Date.now() / 1000) {
       localStorage.removeItem('id_token');
       return true;
@@ -33,5 +33,5 @@ class AuthService {
     window.location.reload();
   }
 }
-
-export default new AuthService();
+const authServer = new AuthService();
+export default authServer;

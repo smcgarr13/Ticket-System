@@ -1,4 +1,4 @@
-import { gql, useQuery } from '@apollo/client';
+import { gql} from '@apollo/client';
 
 const CHECKOUT_QUERY = gql`
   query Checkout($questionId: ID!) {
