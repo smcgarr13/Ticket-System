@@ -1,5 +1,6 @@
 // Importing necessary modules
 const { User } = require("../../models/User");
+const {signToken} = require('../../utils/auth');
 
 // Resolver for handling user related queries and mutations
 const userResolvers = {
@@ -21,7 +22,10 @@ const userResolvers = {
         email,
         password,
       });
-      return newUser;   
+      console.log(newUser);
+      const token = signToken(newUser);
+
+      return { token, newUser };  
     },
     // Login User
     login: async (parent, { email, password }) => {
