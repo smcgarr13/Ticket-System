@@ -8,7 +8,7 @@ export const GET_SINGLEQUESTION = gql`
       questionAuthor
       questionText
       createdAt
-      Bounty
+      bounty
       solution
       comments {
         _id
@@ -17,6 +17,19 @@ export const GET_SINGLEQUESTION = gql`
         createdAt
         isSolution
       }
+      solved
+    }
+  }
+`;
+// Get all Questionns
+export const GET_QUESTIONS = gql`
+  query allQuestions {
+    questions {
+      _id
+      questionAuthor
+      questionText
+      createdAt
+      solution
       solved
     }
   }
