@@ -21,42 +21,40 @@ const resolvers = {
   },
   // Mutation resolvers
   Mutation: {
-    // Resolver to add a new comment. It receives the questionId, commentAuthor, and commentText as arguments
-    addComment: async (parent, { questionId, commentAuthor, commentText }, context) => {
-      // Create a new Comment instance with the provided data and current timestamp
-      let newComment = new Comment({
-        questionId,
-        commentAuthor,
-        commentText,
-        createdAt: new Date().toISOString(),
-        isSolution: false,
-      });
+  //   // Resolver to add a new comment. It receives the questionId, commentAuthor, and commentText as arguments
+  //   addComment: async (parent, { questionId, commentAuthor, commentText }, context) => {
+  //     // Create a new Comment instance with the provided data and current timestamp
+  //     const newComment = await Comment.create({
+  //       questionId,
+  //       commentAuthor,
+  //       commentText,
+  //     });
 
-      // Save the new comment to the database and return it
-      return await newComment.save();
-    },
-    // Resolver to update an existing comment. It receives the comment's ID and the fields to update as arguments.
-    updateComment: async (parent, { id, commentAuthor, commentText, isSolution }, context) => {
-      // Prepare the update object with the fields that are not undefined
-      let update = {};
-      if (commentAuthor !== undefined) {
-        update.commentAuthor = commentAuthor;
-      }
-      if (commentText !== undefined) {
-        update.commentText = commentText;
-      }
-      if (isSolution !== undefined) {
-        update.isSolution = isSolution;
-      }
+  //     // Save the new comment to the database and return it
+  //     return newComment;
+  //   },
+  //   // Resolver to update an existing comment. It receives the comment's ID and the fields to update as arguments.
+  //   updateComment: async (parent, { id, commentAuthor, commentText, isSolution }, context) => {
+  //     // Prepare the update object with the fields that are not undefined
+  //     let update = {};
+  //     if (commentAuthor !== undefined) {
+  //       update.commentAuthor = commentAuthor;
+  //     }
+  //     if (commentText !== undefined) {
+  //       update.commentText = commentText;
+  //     }
+  //     if (isSolution !== undefined) {
+  //       update.isSolution = isSolution;
+  //     }
 
-      // Use the findByIdAndUpdate method from Mongoose to update the comment in the database and return the updated comment
-      return await Comment.findByIdAndUpdate(id, update, { new: true });
-    },
-    // Resolver to delete a comment. It receives the comment's ID as an argument.
-    deleteComment: async (parent, { id }, context) => {
-      // Use the findByIdAndDelete method from Mongoose to delete the comment from the database and return it
-      return await Comment.findByIdAndDelete(id);
-    },
+  //     // Use the findByIdAndUpdate method from Mongoose to update the comment in the database and return the updated comment
+  //     return await Comment.findByIdAndUpdate(id, update, { new: true });
+  //   },
+  //   // Resolver to delete a comment. It receives the comment's ID as an argument.
+  //   deleteComment: async (parent, { id }, context) => {
+  //     // Use the findByIdAndDelete method from Mongoose to delete the comment from the database and return it
+  //     return await Comment.findByIdAndDelete(id);
+  //   },
   },
 };
 

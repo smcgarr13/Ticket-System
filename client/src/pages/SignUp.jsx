@@ -6,7 +6,7 @@ import { ADD_PROFILE } from '../utils/mutations';
 
 import Auth from '../utils/auth';
 
-const Signup = () => {
+const SignUp = () => {
   const [formState, setFormState] = useState({
     name: '',
     email: '',
@@ -99,5 +99,5 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default SignUp;
 

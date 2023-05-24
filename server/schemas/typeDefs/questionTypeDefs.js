@@ -1,19 +1,36 @@
 // Type Definitions
 const { gql } = require('apollo-server-express');
-const typeDefs = gql`
+const typeDefs = gql `
+  type Comment{
+    _id: ID
+    questionId: ID
+    commentAuthor: String
+    commentText: String
+    createdAt: String
+    isSolution: Boolean
+  }
+  input CommentInput {
+    _id: ID
+    questionId: ID
+    commentAuthor: String
+    commentText: String
+    createdAt: String
+    isSolution: Boolean
+  }
   type Question {
     _id: ID!
     questionAuthor: String!
     questionText: String!
-    createdAt: String!
+    createdAt: String
     bounty: Int
-    solution: [String]
-    comments: [Comment]!
     solved: Boolean
+    comment: [Comment]
+    solution: [Comment]
   }
 
   type Query {
     question(id: ID!): Question
+    questions: [Question]
   }
 
   type Mutation {
@@ -22,7 +39,7 @@ const typeDefs = gql`
       solved: Boolean
       bounty: Int
       questionText: String
-      solution: [String]
+      solution: CommentInput
     ): Question
 
     addQuestion(
@@ -38,43 +55,48 @@ const typeDefs = gql`
 module.exports = typeDefs;
 
 
-// const { gql } = require('apollo-server-express');
-
-// const typeDefs = gql`
-//   # Define a type for Question
+// `
 //   type Question {
-//     _id: ID
-//     questionAuthor: String
-//     questionText: String
+//     _id: ID!
+//     questionAuthor: String!
+//     questionText: String!
 //     createdAt: String
 //     bounty: Int
-//     solution: [String]
-//     comments: [Comment]!
+//     solution: [Comment]
+//     comments: [Comment]
 //     solved: Boolean
 //   }
-
-//   # Define a type for Query
-//   type Query {
-//     # Define a query to get a question by ID
-//     question(questionId: ID!): Question
+  
+//   input CommentInput {
+//     _id: ID
+//     questionId: ID
+//     commentAuthor: String
+//     commentText: String
+//     createdAt: String
+//     isSolution: Boolean
 //   }
 
-//   # Define a type for Mutation
+//   type Query {
+//     question(id: ID!): Question
+//     questions: [Question]
+//   }
+
 //   type Mutation {
-//     # Define a mutation to update a question
 //     updateQuestion(
-//       questionId: ID!
+//       id: ID!
 //       solved: Boolean
 //       bounty: Int
 //       questionText: String
-//       solution: [String]
+//       solution: CommentInput
 //     ): Question
-//     # Define a mutation to add a new question
+
 //     addQuestion(
 //       questionText: String!
 //       questionAuthor: String!
 //     ): Question
+
+//     deleteQuestion(
+//       id: ID!
+//     ): Question
 //   }
 // `;
-
-// module.exports = typeDefs;

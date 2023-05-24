@@ -3,12 +3,12 @@ const mongoose = require('mongoose');
 // Set up Question schema
 const QuestionSchema = new mongoose.Schema({
   // Question author field
-  questionAuthor: {
+  questionAuthor : {
     type: String,
     required: true,
   },
   // Question text field
-  questionText: {
+  questionText : {
     type: String,
     required: true,
   },
@@ -23,11 +23,11 @@ const QuestionSchema = new mongoose.Schema({
     default: 0,
   },
   // Solution field
-  solution: [
-    {
-      type: String,
-    },
-  ],
+  solution: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Comment',
+  }
+  ,
   // Comments field
   comments: [
     {
@@ -48,5 +48,5 @@ const QuestionSchema = new mongoose.Schema({
   }
 
 });
-
-module.exports = mongoose.model('Question', QuestionSchema);
+const Question = mongoose.model('Question', QuestionSchema);
+module.exports = Question

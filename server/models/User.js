@@ -4,38 +4,32 @@ const bcrypt = require('bcrypt');
 const UserSchema = new mongoose.Schema({
     username:{
         type: String,
-        required: true,
-        unique: true,
-        trim: true, 
+        // required: true,
+        // unique: true,
+        // trim: true, 
     },
     email: {
         type: String,
-        required: true,
-        unique: true,
-        match: [/.+@.+\..+/, 'Must match an email address!'],
+        // required: true,
+        // unique: true,
+        // match: [/.+@.+\..+/, 'Must match an email address!'],
     },
     password: {
         type: String,
-        required: true,
-        minlength: 5,
+        // required: true,
     },
-    questions:[
-        {
-            type: String,
-            trim: true, 
-        }
-    ],
-    comments:[
-        {
-            type:String,
-            trim: true,
-        }
-    ],
-    bounties: [
-        {
-            type: String,
-        }
-    ]
+    // questions:[
+    //     {
+    //         type: mongoose.Schema.Types.ObjectId,
+    //         ref: 'Question',
+    //     }
+    // ],
+    // comments:[
+    //     {
+    //         type: mongoose.Schema.Types.ObjectId,
+    //         ref: 'Comment',
+    //     }
+    // ],
 
 });
 
@@ -54,5 +48,6 @@ UserSchema.pre('save',async function(next){
 UserSchema.methods.isCorrectPassword = async function (password) {
     return bcrypt.compare(password, this.password);
   };
-module.exports = mongoose.model('User', UserSchema); 
+const User = mongoose.model('User', UserSchema);
+module.exports = User 
 

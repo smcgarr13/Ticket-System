@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/ticket-sytem');
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/ticket-system');
 
 
 module.exports = mongoose.connection;

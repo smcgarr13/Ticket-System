@@ -12,7 +12,8 @@ const seededQuestions = questionSeeds.map((question) => {
   const questionId = uuid.v4(); // Generate a unique ID for the question
   return { ...question, questionId };
 });
-console.log(seededQuestions); // Verify the seeded questions with question IDs
+// console.log(seededQuestions);
+ // Verify the seeded questions with question IDs
 
 
 connectDB.once('open',async()=>{
@@ -23,7 +24,7 @@ connectDB.once('open',async()=>{
   await Question.deleteMany({});
   await Question.create(questionSeeds);
   await Comments.deleteMany({});
-  console.log('QArray:',Question);
+  // console.log('QArray:',Question);
   const commentData = JSON.parse(fs.readFileSync(path.join(__dirname, 'commentsSeeds.json'), 'utf8'));
 
   const questions = await Question.find({}); // Fetch all questions from the database
@@ -32,6 +33,7 @@ connectDB.once('open',async()=>{
           const comments = commentData.filter((comment) => comment.questionId === question._id);
           
           await Comments.create(comments);
+          console.log(Comments.question);
           
           question.comments = comments.map((comment) => comment._id); // Assign comment IDs to question.comments
           

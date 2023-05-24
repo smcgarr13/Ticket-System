@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Login from './pages/Login';
-import Signup from './pages/SignUp';
+import SignUp from './pages/SignUp';
 import User from './pages/User';
 import Home from './pages/Home';
 import ViewAllQuestions from './pages/ViewAllQuestions';
@@ -67,7 +67,7 @@ function App() {
                 <Route path="/checkout" element={<Checkout />} />
                 <Route exact path="/ViewAllQuestions" element={<ViewAllQuestions />} />
                 <Route path="/Home" element={<Home />} />
-                <Route path="/signup" element={<Signup /> } />
+                <Route path="/signup" element={<SignUp /> } />
 
                 {/* <Route path="/checkout" element={<Elements><Checkout /></Elements>} /> */}
                 {/* <Route path="/checkoutForm" element={<Elements><CheckoutForm /></Elements>} /> */}

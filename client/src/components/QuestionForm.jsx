@@ -3,21 +3,24 @@ import { useMutation } from '@apollo/client';
 import { ADD_QUESTION } from '../utils/mutations';
 
 const QuestionForm = () => {
-  const [formState, setFormState] = useState({ questionAuthor: '', questionText: '', bounty: 0 });
+  const [questionState, setQuestion] = useState({ questionAuthor: '', questionText: ''});
   const [addQuestion, { error }] = useMutation(ADD_QUESTION);
 
   const handleFormSubmit = async event => {
     event.preventDefault();
+    console.log(questionState);
     try {
-      const { data } = await addQuestion({
+      const data = await addQuestion({
         variables: {
-          questionAuthor: formState.questionAuthor,
-          questionText: formState.questionText,
-          bounty: formState.bounty,
+          questionAuthor: questionState.questionAuthor,
+          questionText: questionState.questionText
         }
-      });
 
+       
+      });
       console.log(data);
+      setQuestion({ questionAuthor: '', questionText: '' });
+
     } catch (err) {
       console.error(err);
     }
@@ -25,10 +28,11 @@ const QuestionForm = () => {
 
   const handleChange = event => {
     const { name, value } = event.target;
-    setFormState({
-      ...formState,
+    setQuestion({
+      ...questionState,
       [name]: value
     });
+
   };
   
     return (
@@ -41,7 +45,7 @@ const QuestionForm = () => {
               type="text"
               name="questionAuthor"
               placeholder="Username"
-              value={formState.questionAuthor}
+              value={questionState.questionAuthor}
               onChange={handleChange}
               required
             />
@@ -50,7 +54,7 @@ const QuestionForm = () => {
               type="text"
               name="questionText"
               placeholder="Question"
-              value={formState.questionText}
+              value={questionState.questionText}
               onChange={handleChange}
               required
             />
