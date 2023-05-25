@@ -1,11 +1,9 @@
-feature/QuestionList-052123
-
 //omar's show all users/profiles ours will be comments 
 
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useQuery, useMutation } from '@apollo/client';
-import { GET_COMMENTS, REMOVE_COMMENT } from '../utils/queries';
+import { GET_COMMENTS, REMOVE_COMMENT } from '../utils/mutations/commentsMutations';
 import styled from 'styled-components';
 
 // Styled-components
@@ -70,4 +68,3 @@ const CommentList = ({ questionId }) => {
 };
 
 export default CommentList;
-main
