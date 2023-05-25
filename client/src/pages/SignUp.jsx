@@ -25,7 +25,11 @@ const SignUp = () => {
           userName: formState.userName,
         },
       });
-      console.log(mutationResponse);
+      setFormState({
+        email: "",
+        password: "",
+        userName: "",
+      })
       const userToken = mutationResponse.data.createUser.token;
       Auth.login(userToken);
     } catch (e) {
@@ -87,11 +91,11 @@ const SignUp = () => {
                   Submit
                 </button>
               </form>
+              
             )}
 
             {error && (
-              <div className="my-3 p-3 bg-danger text-white">
-                {error.message}
+              <div className="my-3 p-3 bg-danger text-white">There was an error adding your question, please try again.
               </div>
             )}
           </div>
