@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 
+=======
+/* eslint-disable jsx-a11y/anchor-has-content */
+>>>>>>> 06c77cb5a23224dd5d7c7b349a61adbbf751912f
 import React from 'react';
 import { FaSearch, FaFacebookSquare } from "react-icons/fa";
 import '../index.css';
@@ -16,17 +20,11 @@ function Header() {
         </ul>
       </div>
       <nav>
-        {/* <img src="/assets/randys-booth-logo.png" alt="Randy's Booth Co Logo" /> */}
-        {/* <img src="./assets/randys-booth-logo.png" alt="Randy's Booth Co Logo" /> */}
+
         <img src={logo} alt="Randy's Booth Co Logo" />
 
         <ul>
-          {/* <li><a href="https://randysboothco.com/">HOME</a></li> */}
           <li><a href="/Home">HOME</a></li>
-          {/* <li><a href="/projects">PROJECTS</a></li>
-          <li><a href="/inventory-landing">INVENTORY</a></li> */}
-          {/* <li><a href="/questionForm">QUESTION</a></li>
-          <li><a href="/commentForm">COMMENT</a></li> */}
           <li><a href="/user">USER</a></li>
           <li><a href="/checkout">CHECKOUT</a></li>
           <li><a href="/login">LOG IN</a></li>
