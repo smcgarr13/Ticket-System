@@ -19,7 +19,7 @@ Revolutionize your workflow with Ticket-System, a comprehensive solution for tra
 -[Questions](#questions)
 
 ## Description
-Ticket-System is a MERN Stack application designed to manage a ticketing system effectively. With a robust backend built on Express and MongoDB and a frontend powered by React, it offers a comprehensive solution to manage and track issues, tasks, or events. With advanced features like user authentication, commenting, and issue resolution status, it streamlines the management of any project, big or small.
+Ticket-System is a MERN Stack application designed to be a collaborative platform for developers to post,retrieve, solve and remove questions for bounties or financial compensation as user incentives. It offers a comprehensive solution for users that are looking for help with specific programming issue from their immediate peers. With features like user authentication to keep information secure, with a model hierarchy that helps track issue resolution status, and ReactJS implementation to reduce reindeer time of updates  it streamlines the time needed for users to have their questions answered.
 
 ## Installation
 This application is available via Heroku, but if you'd like to download it to your local machine, you can follow these simple steps:
@@ -31,7 +31,7 @@ This application is available via Heroku, but if you'd like to download it to yo
 5. Run `npm start` to start the application.
 
 ## Usage
-Use the Ticket-System application to manage and track issues, tasks, or events. As a user, you can post questions, comment on existing ones, and even mark an issue as resolved. With the search feature, find relevant issues faster than ever.
+Ticket-System is your go-to platform for resolving programming issues collaboratively. Post, retrieve, and comment on questions while contributing to the resolution process, potentially earning incentives for your efforts. Our search feature makes finding relevant discussions fast and efficient.
 
 ## Credits
 N/A
