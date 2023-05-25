@@ -10,16 +10,38 @@ import ViewAllQuestions from './pages/ViewAllQuestions';
 import Checkout from './pages/Checkout';
 // import CheckoutForm from './pages/CheckoutForm';
 import styled from 'styled-components';
-import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
+import { setContext } from '@apollo/client/link/context';
+import { ApolloClient, InMemoryCache, ApolloProvider,createHttpLink } from '@apollo/client';
 // import Stripe from 'react-stripe-checkout'
 import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
 
 // Set up Apollo Client
-const client = new ApolloClient({
-  uri: 'http://localhost:3001/graphql',
-  cache: new InMemoryCache()
+const httpLink = createHttpLink({
+  uri: '/graphql',
 });
+
+const authLink = setContext((_, { headers }) => {
+  // get the authentication token from local storage if it exists
+  const token = localStorage.getItem('id_token');
+  // return the headers to the context so httpLink can read them
+  return {
+    headers: {
+      ...headers,
+      authorization: token ? `Bearer ${token}` : '',
+    },
+  };
+});
+const client = new ApolloClient({
+  link: authLink.concat(httpLink),
+  cache: new InMemoryCache(),
+});
+
+
+// const client = new ApolloClient({
+//   uri: 'http://localhost:3001/graphql',
+//   cache: new InMemoryCache()
+// });
 
 // Set up Stripe
 const stripePromise = loadStripe
