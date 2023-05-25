@@ -4,7 +4,7 @@ import QuestionList from '../components/QuestionList';
 function ViewAllQuestions() {
   return (
     <div>
-      <h2>Here are all the questions submitted so far: </h2>
+      {/* <h2>Here are all the questions submitted so far: </h2> */}
       <QuestionList />
     </div>
   );
