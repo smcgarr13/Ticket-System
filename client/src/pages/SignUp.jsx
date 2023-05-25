@@ -13,6 +13,7 @@ const SignUp = () => {
     password: '',
   });
   const [createUser, { error, data }] = useMutation(CREATE_USER);
+
   // submit form
   const handleFormSubmit = async (event) => {
     event.preventDefault();
@@ -28,6 +29,7 @@ const SignUp = () => {
       console.log(mutationResponse);
       const userToken = mutationResponse.data.createUser.token;
       Auth.login(userToken);
+
     } catch (e) {
       console.error(e);
     }
