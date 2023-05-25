@@ -19,16 +19,16 @@ const UserSchema = new mongoose.Schema({
         required: true,
     },
     questions:[
-        {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Question',
-        }
+        // {
+        //     type: mongoose.Schema.Types.ObjectId,
+        //     ref: 'Question',
+        // }
     ],
     comments:[
-        {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Comment',
-        }
+        // {
+        //     type: mongoose.Schema.Types.ObjectId,
+        //     ref: 'Comment',
+        // }
     ],
 
 });
