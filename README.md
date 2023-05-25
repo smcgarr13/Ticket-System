@@ -61,7 +61,7 @@ N/A
 
 ## Questions
 
-You can find us on GitHub at [smcgarr13](https://github.com/smcgarr13), Luis, Shaun, Teni
+You can find us on GitHub at [smcgarr13](https://github.com/smcgarr13), Luis, Shaun, [Teniife](https://github.com/Teniife)
 
 Please email me directly if you have any additional questions.
 
