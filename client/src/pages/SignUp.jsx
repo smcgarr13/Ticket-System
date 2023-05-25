@@ -8,37 +8,41 @@ import Auth from '../utils/auth';
 
 const SignUp = () => {
   const [formState, setFormState] = useState({
-    name: '',
+    username: '',
     email: '',
     password: '',
   });
   const [createUser, { error, data }] = useMutation(CREATE_USER);
 
-  // update state based on form input changes
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-
-    setFormState({
-      ...formState,
-      [name]: value,
-    });
-  };
-
   // submit form
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     console.log(formState);
-
     try {
-      const { data } = await createUser({
-        variables: { ...formState },
+      const mutationResponse = await createUser({
+        variables: {
+          email: formState.email,
+          password: formState.password,
+          userName: formState.userName,
+        },
       });
+      console.log(mutationResponse);
+      const userToken = mutationResponse.data.createUser.token;
+      Auth.login(userToken);
 
-      Auth.login(data.createUser.token);
     } catch (e) {
       console.error(e);
     }
   };
+    // update state based on form input changes
+    const handleChange = (event) => {
+      const { name, value } = event.target;
+  
+      setFormState({
+        ...formState,
+        [name]: value,
+      });
+    };
 
   return (
     <main className="flex-row justify-center mb-4">
