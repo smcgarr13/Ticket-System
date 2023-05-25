@@ -1,12 +1,18 @@
 // Import necessary packages and components
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+
 import { useMutation } from '@apollo/client';
+import Auth from '../utils/auth';
 import { CREATE_USER } from '../utils/mutations/userMutations';
+
 import './../index.css';
+
+
 
 // Defining the UserForm component
 const UserForm = () => {
-  console.log('Rendering UserForm')
+  // console.log('Rendering UserForm')
   // Using React useState hook for form state management
   const [formState, setFormState] = useState({
     username: '',
@@ -15,22 +21,41 @@ const UserForm = () => {
   });
 
   // Using Apollo useMutation hook to execute the CREATE_USER mutation
-  const [createUser] = useMutation(CREATE_USER);
+  const [createUser,{error,data}] = useMutation(CREATE_USER);
 
-  // Handler for form submission
-  const handleFormSubmit = (event) => {
+  const handleFormSubmit = async (event) => {
     event.preventDefault();
-    createUser({ variables: { ...formState } });
+    console.log(formState);
+    try {
+      const mutationResponse = await createUser({
+        variables: {
+          email: formState.email,
+          password: formState.password,
+          username: formState.username,
+        },
+      });
+      setFormState({
+        email: "",
+        password: "",
+        userName: "",
+      })
+      const userToken = mutationResponse.data.createUser.token;
+      console.log(mutationResponse);
+      Auth.login(userToken);
+    } catch (e) {
+      console.error(e);
+    }
   };
+    // update state based on form input changes
+    const handleChange = (event) => {
+      const { name, value } = event.target;
+  
+      setFormState({
+        ...formState,
+        [name]: value,
+      });
+    };
 
-  // Handler for form input changes to update the state
-  const handleInputChange = (event) => {
-    const { name, value } = event.target;
-    setFormState({
-      ...formState,
-      [name]: value,
-    });
-  };
 
   // Return statement to render the form to the screen
   return (
@@ -44,7 +69,7 @@ const UserForm = () => {
             name="username"
             placeholder="Username"
             value={formState.username}
-            onChange={handleInputChange}
+            onChange={handleChange}
             required
           />
           <input
@@ -53,7 +78,7 @@ const UserForm = () => {
             name="email"
             placeholder="Email"
             value={formState.email}
-            onChange={handleInputChange}
+            onChange={handleChange}
             required
           />
           <input
@@ -62,7 +87,7 @@ const UserForm = () => {
             name="password"
             placeholder="Password"
             value={formState.password}
-            onChange={handleInputChange}
+            onChange={handleChange}
             required
           />
         </div>

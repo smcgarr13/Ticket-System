@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+
+=======
 /* eslint-disable jsx-a11y/anchor-has-content */
+>>>>>>> 06c77cb5a23224dd5d7c7b349a61adbbf751912f
 import React from 'react';
 import { FaSearch, FaFacebookSquare } from "react-icons/fa";
 import '../index.css';
