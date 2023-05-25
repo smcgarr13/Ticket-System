@@ -11,19 +11,6 @@ const stripeTypeDefs = require('./stripeTypeDefs');
 
 // Merging all typeDefs into one array
 const typeDefs = mergeTypeDefs([userTypeDefs,questionTypeDefs,commentsTypeDefs,questionListTypeDefs,bountyTypeDefs,stripeTypeDefs]);
-// const typeDefs = gql`
-//   ${questionTypeDefs},
-//   ${userTypeDefs}
-// `;
-// const typeDefs = gql`
-//   ${userTypeDefs}
-//   ${commentsTypeDefs}
-//   ${questionTypeDefs}
-//   ${questionListTypeDefs}
-//   ${bountyTypeDefs}
-//   ${stripeTypeDefs}
-
-// `;
 
 // Exporting the merged typeDefs
 module.exports = typeDefs;

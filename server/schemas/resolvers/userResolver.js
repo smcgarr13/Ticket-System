@@ -1,5 +1,5 @@
 // Importing necessary modules
-const { User } = require("../../models/User");
+const { User } = require("../../models");
 const {signToken} = require('../../utils/auth');
 
 // Resolver for handling user related queries and mutations

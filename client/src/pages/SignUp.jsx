@@ -2,43 +2,45 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import { useMutation } from '@apollo/client';
-import { ADD_PROFILE } from '../utils/mutations';
+import { CREATE_USER } from '../utils/mutations/userMutations';
 
 import Auth from '../utils/auth';
 
 const SignUp = () => {
   const [formState, setFormState] = useState({
-    name: '',
+    username: '',
     email: '',
     password: '',
   });
-  const [addProfile, { error, data }] = useMutation(ADD_PROFILE);
-
-  // update state based on form input changes
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-
-    setFormState({
-      ...formState,
-      [name]: value,
-    });
-  };
-
+  const [createUser, { error, data }] = useMutation(CREATE_USER);
   // submit form
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     console.log(formState);
-
     try {
-      const { data } = await addProfile({
-        variables: { ...formState },
+      const mutationResponse = await createUser({
+        variables: {
+          email: formState.email,
+          password: formState.password,
+          userName: formState.userName,
+        },
       });
-
-      Auth.login(data.addProfile.token);
+      console.log(mutationResponse);
+      const userToken = mutationResponse.data.createUser.token;
+      Auth.login(userToken);
     } catch (e) {
       console.error(e);
     }
   };
+    // update state based on form input changes
+    const handleChange = (event) => {
+      const { name, value } = event.target;
+  
+      setFormState({
+        ...formState,
+        [name]: value,
+      });
+    };
 
   return (
     <main className="flex-row justify-center mb-4">
