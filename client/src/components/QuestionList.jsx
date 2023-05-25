@@ -2,8 +2,9 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useQuery } from '@apollo/client';
-import { GET_QUESTIONS } from '../utils/queries/questionQueries';
+import { useQuery, useMutation } from '@apollo/client';
+import { GET_QUESTIONS, GET_SINGLEQUESTION } from '../utils/queries/questionQueries';
+import { REMOVE_QUESTION } from '../utils/mutations/questionMutations'
 import styled from 'styled-components';
 
 // Styled-components
@@ -48,17 +49,41 @@ margin-top: 0.5rem;
 `;
 
 const QuestionList = () => {
-// Fetching questions data using the GET_QUESTIONLIST query
-const { loading, error, data } = useQuery(GET_QUESTIONS);
-const questions = data?.questions ||[]
-console.log(questions);
-if (loading) return <p>Loading...</p>;
-if (error) return <p>Error </p>;
+  // Fetching questions data using the GET_QUESTIONLIST query
+  const { loading, error, data } = useQuery(GET_QUESTIONS);
+  // Remove Question
+  const [deleteQuestion] = useMutation(REMOVE_QUESTION, {
+    update(cache, { data: { deleteQuestion } }) {
+      try {
+        cache.writeQuery({
+          query: GET_SINGLEQUESTION,
+          data: { question: deleteQuestion },
+        });
+      } catch (e) {
+        console.error(e);
+      }
+    },
+  });
+  const questions = data?.questions || []
+  console.log(questions);
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error </p>;
 
-// Ensure data and data.questionList exist before trying to access data.questionList.questions
-if (!data || !data.questions || !data.questions.length===0) {
-  return <h3>No Questions Yet</h3>;
-}
+  const handleRemoveQuestion = async (id) => {
+    try {
+      const { data } = await deleteQuestion({
+        variables: { id },
+      });
+      window.location.reload();
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  // Ensure data and data.questionList exist before trying to access data.questionList.questions
+  if (!data || !data.questions || !data.questions.length === 0) {
+    return <h3>No Questions Yet</h3>;
+  }
 
   return (
     <QuestionContainer>
@@ -79,6 +104,10 @@ if (!data || !data.questions || !data.questions.length===0) {
               <Button to={`/questions/${question._id}/comments`}>
                 View Comments
               </Button>
+              <Button onClick={() => handleRemoveQuestion(question._id)}>
+                Delete Question
+              </Button>
+
             </div>
           </CardContainer>
         ))}
