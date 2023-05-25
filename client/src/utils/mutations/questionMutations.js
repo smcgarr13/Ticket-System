@@ -29,7 +29,7 @@ export const UPDATE_QUESTION = gql`
 // REMOVE_QUESTION mutation
 export const REMOVE_QUESTION = gql`
   mutation RemoveQuestion($id: ID!) {
-    removeQuestion(id: $id) {
+    deleteQuestion(id: $id) {
       _id
     }
   }
