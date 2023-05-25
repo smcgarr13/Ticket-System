@@ -3,7 +3,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useQuery, useMutation } from '@apollo/client';
-import { GET_COMMENTS, REMOVE_COMMENT } from '../utilsClient/mutations/commentsMutations';
+import { GET_COMMENTS, REMOVE_COMMENT } from '../utils/mutations/commentsMutations';
 import styled from 'styled-components';
 
 // Styled-components

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useQuery } from '@apollo/client';
-import CHECKOUT_QUERY from '../utilsClient/queries/stripeQueries';
+import CHECKOUT_QUERY from '../utils/queries/stripeQueries';
 
 const CheckoutComponent = ({ questionId }) => {
   const { loading, error, data } = useQuery(CHECKOUT_QUERY, {
