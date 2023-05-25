@@ -15,11 +15,12 @@ const Sidebar = styled.div`
   justify-content: center;
   align-items: center;
   padding: 20px;
-  background-color: #ccc;
+  background-color:   #ccc;
   color: floralwhite;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   width: 600px;
   height: 350px;
+  margin: 20px;
   margin-right: auto;
 `;
 
