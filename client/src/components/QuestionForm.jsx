@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
-import { ADD_QUESTION } from '../utilsClient/mutations';
+import { ADD_QUESTION } from '../utilsClient/mutations/questionMutations';
 
 const QuestionForm = () => {
   const [questionState, setQuestion] = useState({ questionAuthor: '', questionText: ''});
