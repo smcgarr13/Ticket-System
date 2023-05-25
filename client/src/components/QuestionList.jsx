@@ -6,13 +6,13 @@ import { useQuery } from '@apollo/client';
 import { GET_QUESTIONS } from '../utils/queries/questionQueries';
 import styled from 'styled-components';
 
-// Styled-components
+// Styled-components|| future dev: change bootstrap styling to vanilla CSS
 const CardHeader = styled.h4`
-  background-color: blue;
-  width:100px;
-  color: light;
-  padding: 2rem;
-  margin: 0;
+  background-color: #DF6301;
+  width:100%;
+  color: white;
+  padding: 1rem;
+  margin: 0px;
 `;
 const QuestionContainer = styled.div`
   display: flex;
@@ -20,19 +20,32 @@ const QuestionContainer = styled.div`
   align-items: center;
   justify-content:center;
   padding: 2rem;
+  width:100%
 `;
 const CardContainer = styled.div`
-width: 100%
-background-color: green;
+background-color: white;
+  border: 1px solid #DF6301;
+  padding: 0px 0px 0px;
+  margin: 10px 20px;
+  font-size: 20px;
+  text-align: left;
+  width:90%;
 `;
 const CardHolder = styled.div`
-  align-items: center;
-  width: 100%;
-  max-width: 900px;
+display: grid;
+grid-template-columns: auto auto;
+width: 90%;
+margin: 10px 20px;
+background-color: #FFFFFF;
+padding: 40px;
 `;
 
 const WhiteText = styled.span`
-  color: white;
+  background-color:white;
+  padding:0.5rem;
+  display:block;
+  width: 100%;
+  color: #DF6301;
   font-size: 1rem;
   aling-items: center
 `;
@@ -40,8 +53,8 @@ const WhiteText = styled.span`
 const Button = styled(Link)`
 display: block;
 width: 100%;
-background-color: light;
-color: dark;
+background-color: #DF6301;
+color: white;
 text-align: center;
 padding: 0.5rem 1rem;
 margin-top: 0.5rem;
@@ -65,18 +78,18 @@ if (!data || !data.questions || !data.questions.length===0) {
       <h3 className="text-primary">Questions</h3>
       <CardHolder>
         {data.questions.map((question) => (
-          <CardContainer key={question._id} className="col-12 col-xl-6">
-            <div className="card mb-3">
+          <CardContainer key={question._id} className="">
+            <div className="">
               <CardHeader>
-                {question.questionText} <br />
-                <WhiteText>asked by {question.questionAuthor}</WhiteText>
+                {question.questionText}
               </CardHeader>
+              <WhiteText>Question By: {question.questionAuthor}</WhiteText>
 
-              <Button to={`/questions/${question._id}`}>
+              <Button className='button' to={`/questions/${question._id}`}>
                 View and answer this question.
               </Button>
 
-              <Button to={`/questions/${question._id}/comments`}>
+              <Button className='button' to={`/questions/${question._id}/comments`}>
                 View Comments
               </Button>
             </div>
