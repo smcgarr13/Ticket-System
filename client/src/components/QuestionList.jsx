@@ -117,7 +117,7 @@ const QuestionList = () => {
               <Button className='button' to={`/questions/${question._id}/comments`}>
                 View Comments
               </Button>
-              <Button onClick={() => handleRemoveQuestion(question._id)}>
+              <Button className='button' onClick={() => handleRemoveQuestion(question._id)}>
                 Delete Question
               </Button>
 
